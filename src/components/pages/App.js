@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <div className="flex justify-between px-5 py-3 items-center">
+          <img src="/logo512.png" width={128} alt="logo" />
+          <p className="">
+            Hallo, <span className="text-cyan-600">Gadjian User</span>
+          </p>
+        </div>
       </header>
-    </div>
+      <main className="flex">
+        <aside className="w-72 px-5">
+          <ul>
+            <li>Beranda</li>
+            <li>Personnel List</li>
+            <li>Daily Attendance</li>
+          </ul>
+        </aside>
+        <section className="bg-[#eaeaea] h-screen w-full">
+          <div className="p-5 m-5 flex justify-between bg-white">
+            <div className="flex">
+              <h1>PERSONNEL LIST</h1>
+              <h3>List of Personnels</h3>
+            </div>
+            <div className="flex">
+              <form>
+                <input type="text" placeholder="Find Personnels" />
+              </form>
+              <button type="button">ADD PERSONNEL +</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 
