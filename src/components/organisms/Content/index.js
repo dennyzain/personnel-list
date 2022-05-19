@@ -1,19 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import Card from '../../molecules/Card';
+import Sidebar from '../../molecules/Sidebar';
 
 export default function Content() {
   return (
     <main className="flex">
-      <aside className="w-72 px-5 hidden lg:block">
-        <ul>
-          <li>Beranda</li>
-          <li>Personnel List</li>
-          <li>Daily Attendance</li>
-        </ul>
-      </aside>
-      <section className="bg-[#eaeaea]  w-full">
-        <div className="bg-white m-4 p-5 box-border flex flex-col">
+      <Sidebar />
+      <section className="bg-[#eaeaea]  w-full md:h-screen">
+        <div className="bg-white mt-4 mx-4 p-5 box-border flex flex-col">
           <h1 className="text-torquise text-xl font-bold">PERSONNEL LIST</h1>
           <p className="text-[#444444]">List of all personnels</p>
           <input
@@ -27,10 +22,12 @@ export default function Content() {
             <FontAwesomeIcon icon={faPlus} color="white" />
           </button>
         </div>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <div className="flex flex-col md:flex-row">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </section>
     </main>
   );
