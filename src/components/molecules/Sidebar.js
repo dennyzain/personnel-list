@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Sidebar() {
   return (
-    <aside className="w-72 mt-4 px-5 hidden lg:flex">
+    <aside className="w-1/5 mt-4 px-5 hidden lg:flex">
       <ul>
         <li>
           <FontAwesomeIcon icon={faHouseChimney} className="px-2 mr-2" />
