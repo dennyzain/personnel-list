@@ -1,19 +1,19 @@
 import axios from 'axios';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addingDataFetching } from '../redux/reducer';
 
 const useFetch = () => {
-  const [data, setData] = useState({ results: [] });
+  const dispatch = useDispatch();
 
   const fetch = useCallback(async () => {
     const res = await axios.get('https://randomuser.me/api/?results=28');
-    setData(res.data);
-  }, []);
+    dispatch(addingDataFetching(res.data.results));
+  }, [dispatch]);
 
   useEffect(() => {
     fetch();
   }, [fetch]);
-
-  return data;
 };
 
 export default useFetch;

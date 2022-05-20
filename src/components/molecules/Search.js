@@ -15,7 +15,6 @@ export default function Search() {
           placeholder="Find Personnels"
           className="p-2 my-2 border border-[#444444]"
         />
-        {/* <FontAwesomeIcon icon={faMagnifyingGlass} color="white" /> */}
         <button
           type="button"
           className="flex items-center justify-between bg-torquise p-3 lg:ml-3 lg:my-2"

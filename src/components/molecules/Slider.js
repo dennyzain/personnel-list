@@ -1,14 +1,13 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import useFetch from '../../hooks/useFetch';
-import Card from '../atoms/Card';
-import 'swiper/css';
+import { useSelector } from 'react-redux';
 import { useRef, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import 'swiper/css';
+import Card from '../atoms/Card';
 
 export default function Slider() {
-  const data = useFetch();
-
+  const users = useSelector((state) => state.data.users);
   const sliderRef = useRef(null);
 
   const handlePrev = useCallback(() => {
@@ -32,13 +31,11 @@ export default function Slider() {
             sensitivity: 1,
             releaseOnEdges: true,
           }}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
         >
-          {data.results.map((item, index) => {
+          {users.map((item, index) => {
             return (
               <SwiperSlide key={index}>
-                <Card />
+                <Card {...item} />
               </SwiperSlide>
             );
           })}
@@ -63,8 +60,8 @@ export default function Slider() {
         </div>
       </div>
       <div className="block lg:hidden">
-        {data.results.map((item, index) => {
-          return <Card key={index} />;
+        {users.map((item, index) => {
+          return <Card key={index} {...item} />;
         })}
       </div>
     </>
