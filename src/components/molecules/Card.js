@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Card() {
   return (
-    <div className="rounded-xl bg-white mx-4 mt-4 py-2 lg:max-w-[300px] lg:max-h-[auto] ">
+    <div className="rounded-xl bg-white mx-4 mt-4 py-2 lg:min-w-[250px] lg:min-h-[auto] ">
       <div className="flex items-center justify-between px-5 border-b-2 border-[#eeeeee]">
         <p>
           Personnel ID: <span className="text-torquise">123456</span>
