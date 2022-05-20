@@ -22,40 +22,51 @@ export default function Slider() {
   }, []);
 
   return (
-    <div>
-      <Swiper
-        ref={sliderRef}
-        slidesPerView={4}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-        className="relative w-full"
-      >
-        {data.results.map((item, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <Card />
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-      <div className="hidden lg:flex lg:flex-row justify-center mt-4">
-        <button
-          type="button"
-          onClick={handlePrev}
-          className="bg-[#eaeaea] animate-hover px-[11px] h-[32px] mr-[25px] hidden md:block"
+    <>
+      <div className="hidden lg:block">
+        <Swiper
+          ref={sliderRef}
+          slidesPerView={4}
+          mousewheel={{
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+          }}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
         >
-          <FontAwesomeIcon icon={faAngleLeft} className="pr-1" />
-          Previous
-        </button>
-        <button
-          type="button"
-          onClick={handleNext}
-          className="bg-bg-[#eaeaea] animate-hover px-[11px] h-[32px] mr-[25px] hidden md:block"
-        >
-          Next
-          <FontAwesomeIcon icon={faAngleRight} className="pl-1" />
-        </button>
+          {data.results.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <Card />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+        <div className="hidden lg:flex lg:flex-row justify-center mt-4">
+          <button
+            type="button"
+            onClick={handlePrev}
+            className="bg-[#eaeaea] animate-hover px-[11px] h-[32px] mr-[25px] hidden md:block"
+          >
+            <FontAwesomeIcon icon={faAngleLeft} className="pr-1" />
+            Previous
+          </button>
+          <button
+            type="button"
+            onClick={handleNext}
+            className="bg-bg-[#eaeaea] animate-hover px-[11px] h-[32px] mr-[25px] hidden md:block"
+          >
+            Next
+            <FontAwesomeIcon icon={faAngleRight} className="pl-1" />
+          </button>
+        </div>
       </div>
-    </div>
+      <div className="block lg:hidden">
+        {data.results.map((item, index) => {
+          return <Card key={index} />;
+        })}
+      </div>
+    </>
   );
 }

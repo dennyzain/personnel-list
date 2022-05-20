@@ -11,7 +11,7 @@ const useFetch = () => {
 
   useEffect(() => {
     fetch();
-  }, []);
+  }, [fetch]);
 
   return data;
 };

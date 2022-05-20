@@ -1,9 +1,10 @@
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Typography from './Typography';
 
 export default function Card() {
   return (
-    <div className="rounded-xl bg-white mx-4 mt-4 py-2 lg:max-w-[290px] lg:min-h-[400px]">
+    <div className="rounded-xl bg-white mx-4 mt-4 py-2 min-w-[290px]  lg:min-w-[250px] lg:min-h-[400px]">
       <div className="flex items-center justify-between px-5 border-b-2 border-[#eeeeee]">
         <p>
           Personnel ID: <span className="text-torquise">123456</span>
@@ -18,10 +19,7 @@ export default function Card() {
           className="rounded-full w-[80px] h-[80px] object-contain bg-black lg:w-[140px] lg:h-[140px] lg:mb-5 lg:self-center"
         />
         <div className="pl-7 lg:text-left lg:pl-0">
-          <h4>Name</h4>
-          <p>First Name Last Name</p>
-          <h4>Telephone</h4>
-          <p>Phone Number</p>
+          <Typography />
         </div>
       </div>
     </div>
