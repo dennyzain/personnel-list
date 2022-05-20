@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import Card from '../../molecules/Card';
 import Sidebar from '../../molecules/Sidebar';
+import Slider from '../../molecules/Slider';
 
 export default function Content() {
   return (
@@ -22,12 +22,7 @@ export default function Content() {
             <FontAwesomeIcon icon={faPlus} color="white" />
           </button>
         </div>
-        <div className="flex flex-col md:flex-row">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
+        <Slider />
       </section>
     </main>
   );
